@@ -7,7 +7,10 @@ public class DuplicateElements{
 
         int [] arr = new int[l];
         input(arr, sc);
+        System.out.println("Before removing duplicates: ");
+        output(arr);
         duplicate(arr);
+        System.out.println("After removing duplicates: ");
         output(arr);
     }
     public static void input(int[] arr, Scanner sc){
