@@ -6,7 +6,7 @@ public class DuplicateElements{
         int l = sc.nextInt();
 
         int [] arr = new int[l];
-        input(arr);
+        input(arr, sc);
         duplicate(arr);
         output(arr);
     }
@@ -31,7 +31,12 @@ public class DuplicateElements{
     }
     public static void output(int[] arr){
         for(int i = 0; i < arr.length; i ++){
-            System.out.print(arr[i] + ", ");
+            if(arr[i] != arr.length){
+                System.out.print(arr[i] + ", ");
+            }
+            else{
+                System.out.print(arr[i]);
+            }
         }
     }
 }
