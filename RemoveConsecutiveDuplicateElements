@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class RemoveConsecutiveDuplicateElements{
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the length of your array: ");
+    int l = sc.nextInt();
+    double[] arr = new double[l];
+    int counter = 0;
+    double[] newarr = new double[l];
+    for(int i = 0; i < arr.length; i ++){
+      System.out.println("Enter your number: ");
+      arr[i] = sc.nextDouble();
+    }
+    for(int j = 0; j < arr.length; j ++){
+      boolean flag = false;
+      for(int x = j + 1; x < arr.length; x ++){
+        if(arr[j] == arr[x]){
+          flag = true;
+          break;
+        }
+      }
+      if(flag){
+        counter = counter + 1;
+      }
+      else{
+        newarr[j] = arr[j];
+      }
+    }
+    for(int y = 0; y < newarr.length; y ++){
+      if(newarr[y] != 0.0){
+        System.out.println(newarr[y]);
+      }
+    }
+    System.out.println("Removed elements: " + counter);
+  }
+}
