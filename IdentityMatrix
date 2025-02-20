@@ -1,0 +1,42 @@
+public class IdentityMatrix{
+  public static void main(String[] args){
+    int[][] A = {{1,0,0,0},
+      {0,1,0,0},
+      {0,0,1,0},
+      {0,0,0,1}
+    };
+    if(diagonal(A) == false || zero(A) == false){
+      System.out.println("Not an identity matrix");
+    }
+    if(diagonal(A) == true && zero(A) == true){
+      System.out.println("Identity matrix");
+    }
+
+  }
+  public static boolean diagonal(int[][] A){
+    if(A.length != A[0].length){
+      return false;
+    }
+    for(int i = 0; i < A.length; i ++){
+      for(int j = 0; j < A[i].length; j ++){
+        if(i == j && A[i][i] != 1){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  public static boolean zero(int[][] A){
+    if(A.length != A[0].length){
+      return false;
+    }
+    for(int i = 0; i < A.length; i ++){
+      for(int j = 1; j < A[i].length; j ++){
+        if(A[i][j] != A[j][i] && A[i][j] == 0){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+}
